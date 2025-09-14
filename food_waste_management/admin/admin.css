@@ -1,0 +1,271 @@
+:root {
+    --primary-color: #06C167;
+    --sidebar-bg: linear-gradient(135deg, #1e1e2f, #27293d);
+    --card-gradient: linear-gradient(145deg, #06C167, #0b8b5e);
+    --dark-bg: #1e1e2f;
+    --light-bg: #ffffff;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --transition: all 0.5s ease;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+    transition: var(--transition);
+}
+
+body.dark {
+    background: var(--dark-bg);
+    color: var(--text-light);
+}
+
+/* Sidebar Styles */
+nav {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: var(--sidebar-bg);
+    padding: 20px;
+    transition: var(--transition);
+    color: var(--text-light);
+    z-index: 100;
+}
+
+nav.close {
+    width: 80px;
+}
+
+nav .logo-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+nav .menu-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.nav-links li,
+.logout-mode li {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.nav-links a,
+.logout-mode a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.logout-mode a:hover {
+    background-color: var(--hover-bg);
+}
+
+.sidebar-toggle {
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 20px;
+}
+
+nav.close .link-name {
+    display: none;
+}
+
+/* Dashboard */
+.dashboard {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+    transition: var(--transition);
+}
+
+nav.close ~ .dashboard {
+    margin-left: 80px;
+}
+
+.dashboard .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.dashboard .logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.dash-content .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.boxes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1;
+    min-width: 200px;
+    background: var(--card-gradient);
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: var(--transition);
+    cursor: pointer;
+    animation: fadeInUp 0.5s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box .text {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.box .number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead {
+    background-color: #06C167;
+    color: #fff;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+button {
+    background-color: #06C167;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:hover {
+    background-color: #059457;
+}
+
+/* Dark Mode */
+body.dark .dashboard,
+body.dark .table-container {
+    background-color: #2c2c3d;
+    color: #fff;
+}
+
+body.dark .table thead {
+    background-color: #0b8b5e;
+}
+
+body.dark .table tbody tr:hover {
+    background-color: #3a3a50;
+}
+
+body.dark button {
+    background-color: #0b8b5e;
+}
+
+body.dark button:hover {
+    background-color: #06C167;
+}
+
+/* Mode Toggle Switch */
+.mode-toggle {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background: #555;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.switch {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+body.dark .switch {
+    left: 22px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

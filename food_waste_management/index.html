@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Donate Login</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #dce35b, #45b649);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .logo {
+      font-size: 40px;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      margin-bottom: 10px;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    .logo b {
+      color: #06C167;
+    }
+
+    .para {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 30px;
+      animation: slideUp 1s ease-in-out;
+    }
+
+    .log {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      animation: popUp 1s ease-in-out;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      background-color: #06C167;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    a:hover {
+      transform: scale(1.05);
+      background-color: #04a255;
+      letter-spacing: 2px;
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes popUp {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .log {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px;
+      }
+
+      a {
+        font-size: 16px;
+        padding: 12px 28px;
+      }
+
+      .logo {
+        font-size: 32px;
+      }
+
+      .para {
+        font-size: 20px;
+    }
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("img/Title.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+    
+  </style>
+</head>
+<body>
+  <p class="logo">Welcome to Food <b>Donate</b></p>
+  <p class="para">Login as</p>
+
+  <div class="log">
+    <a href="signup.php"><i class="fas fa-user"></i> User</a>
+    <a href="admin/signup.php"><i class="fas fa-user-shield"></i> Admin</a>
+  </div>
+
+</body>
+</html>
